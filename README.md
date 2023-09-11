@@ -5,6 +5,7 @@ Access my GitHub Profile, Slack Username and other credentials similar to my cur
 ## Overview
 
 This app displays information about Papa Kofi. It also provides a functionality to edit the information fields. <br>
+The home screen of the app features a pencil icon that, when tapped takes a user to a screen in order to edit various fields. A user has to simply make changes, and immediately see those changes upon return to the homepage.
 
 # Screenshot
 
