@@ -22,7 +22,7 @@ This app displays information about Papa Kofi. It also provides a functionality 
 
 - Ensure you have **flutter SDK** installed. Check the official documentation for [system requirements](https://docs.flutter.dev/get-started/install/windows#:~:text=System%20requirements,-To%20install%20and&text=Operating%20Systems%3A%20Windows%2010%20or,being%20available%20in%20your%20environment.&text=Git%20for%20Windows%202.x,the%20Windows%20Command%20Prompt%20option.)
 - Clone this repository to your local workstation
-- Run <code> flutter pub get </code>f
+- Run <code> flutter pub get </code>
 - Issue flutter run in your terminal, making sure to start an android emulator or by connecting to a physical android device.
 
 # Implementing core functionality
