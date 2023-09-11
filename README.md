@@ -37,10 +37,6 @@ GetX is used to store the information or data as states that can be modified. Up
 
 With GetX, navigation is seamlessly without the need to access the context object.
 
-### GetX used to open Snackbar
-
-Upon successfully editing the fields, a SnackBar offers a user-friendly feedback to the user.
-
 <br>
 
 [online documentation - flutter.dev](https://docs.flutter.dev/)
