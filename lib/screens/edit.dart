@@ -1,6 +1,7 @@
 import 'package:cv_application/controllers/field_controller.dart';
 import 'package:cv_application/widgets/edit_header.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Edit extends StatefulWidget {
   const Edit({super.key});
@@ -132,46 +133,47 @@ class _EditState extends State<Edit> {
                     SizedBox(
                       height: size.height * 0.03,
                     ),
-
-                    /// To include validation features before finalizing changes
-                    // ElevatedButton(
-                    //   style: ButtonStyle(
-                    //       backgroundColor: MaterialStateProperty.all<Color>(Colors
-                    //           .black), // set the background color of the button
-                    //       textStyle: MaterialStateProperty.all<TextStyle>(
-                    //           const TextStyle(color: Colors.white)),
-                    //       padding: MaterialStateProperty.all<EdgeInsets>(
-                    //           const EdgeInsets.symmetric(
-                    //               vertical: 15.0,
-                    //               horizontal:
-                    //                   30.0)), // set the padding of the button
-                    //       shape:
-                    //           MaterialStateProperty.all<RoundedRectangleBorder>(
-                    //               RoundedRectangleBorder(
-                    //                   borderRadius:
-                    //                       BorderRadius.circular(30.0)))),
-                    //   onPressed: () {
-                    //     if (formKey.currentState!.validate()) {
-                    //       fieldController
-                    //           .modifyFullname(fullNameController.text);
-                    //       fieldController.modifyGitHubUsername(
-                    //           githubUsernameController.text);
-                    //       fieldController.modifySlackUsername(
-                    //           slackUsernameController.text);
-                    //       fieldController
-                    //           .modifyPersonalBio(personalBioController.text);
-                    //       Get.snackbar("Success", "Fields updated successfully",
-                    //           duration: const Duration(seconds: 5),
-                    //           backgroundColor: Colors.white,
-                    //           messageText:
-                    //               const Text("Fields updated successfully!"));
-                    //     }
-                    //   },
-                    //   child: const Text(
-                    //     'Save',
-                    //     style: TextStyle(color: Colors.white),
-                    //   ),
-                    // ),
+                    ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors
+                              .black), // set the background color of the button
+                          textStyle: MaterialStateProperty.all<TextStyle>(
+                              const TextStyle(color: Colors.white)),
+                          padding: MaterialStateProperty.all<EdgeInsets>(
+                              const EdgeInsets.symmetric(
+                                  vertical: 15.0,
+                                  horizontal:
+                                      30.0)), // set the padding of the button
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(30.0)))),
+                      onPressed: () async {
+                        if (formKey.currentState!.validate()) {
+                          fieldController
+                              .modifyFullname(fullNameController.text);
+                          fieldController.modifyGitHubUsername(
+                              githubUsernameController.text);
+                          fieldController.modifySlackUsername(
+                              slackUsernameController.text);
+                          fieldController
+                              .modifyPersonalBio(personalBioController.text);
+                          Get.snackbar("Success", "Fields updated successfully",
+                              duration: const Duration(seconds: 3),
+                              backgroundColor: Colors.white,
+                              messageText:
+                                  const Text("Fields updated successfully!"));
+                          await Future.delayed(const Duration(seconds: 3));
+                          if (!mounted) return;
+                          Navigator.pop(context);
+                        }
+                      },
+                      child: const Text(
+                        'Save',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ],
                 ),
               ),
